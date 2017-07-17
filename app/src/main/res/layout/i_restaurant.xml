@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="8dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/image_view_restaurant_thumb"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_alignParentTop="true"
+            android:scaleType="fitXY"
+            tools:background="@drawable/ic_haewoosau" />
+
+        <LinearLayout
+            android:id="@+id/linear_layout_restaurant_name_and_check_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image_view_restaurant_thumb"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:weightSum="100">
+
+            <TextView
+                android:id="@+id/text_view_restaurant_name"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="75"
+                android:gravity="center_vertical"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="HaeWooSau" />
+
+            <CheckBox
+                android:id="@+id/checkbox_restaurant_check"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:button="@drawable/selector_restaurant_check" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_view_restaurant_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/linear_layout_restaurant_name_and_check_box"
+            android:layout_alignStart="@id/linear_layout_restaurant_name_and_check_box"
+            android:layout_below="@id/linear_layout_restaurant_name_and_check_box"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            tools:text="This is the sample text. Hello world!!! This is the sample text. Hello world!!! This is the sample text. Hello world!!! This is the sample text. Hello world!!! This is the sample text. Hello world!!! This is the sample text. Hello world!!!" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

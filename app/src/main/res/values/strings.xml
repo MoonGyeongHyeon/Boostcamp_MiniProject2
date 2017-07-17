@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MiniProject2</string>
+
+    <string name="menu_setting_drawer">설정</string>
+    <string name="menu_home_drawer">홈</string>
+
+    <string name="drawer_contents_open">열림</string>
+    <string name="drawer_contents_close">닫힘</string>
+
+</resources>
