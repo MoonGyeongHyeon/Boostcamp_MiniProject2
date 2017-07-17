@@ -5,6 +5,7 @@ package com.boostcamp.miniproject2.model;
  */
 
 public class Restaurant {
+
     private String name;
     private String info;
     private int image;

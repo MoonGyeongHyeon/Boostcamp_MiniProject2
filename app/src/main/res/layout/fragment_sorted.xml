@@ -8,9 +8,9 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view_nearby"
+        android:id="@+id/recyclerview_nearby"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:listitem="@layout/i_restaurant" />
+        tools:listitem="@layout/item_restaurant" />
 
 </LinearLayout>

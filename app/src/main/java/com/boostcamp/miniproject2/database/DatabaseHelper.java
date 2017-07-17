@@ -10,6 +10,7 @@ import com.boostcamp.miniproject2.R;
 import com.boostcamp.miniproject2.model.Restaurant;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -17,6 +18,7 @@ import java.util.Random;
  */
 
 public class DatabaseHelper extends SQLiteOpenHelper {
+
     private static DatabaseHelper databaseHelper;
     private SQLiteDatabase db = getWritableDatabase();
 
@@ -168,7 +170,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Log.d("Test", "Insert DB");
     }
 
-    public ArrayList<Restaurant> selectAllBySortCondition(int condition) {
+    public List<Restaurant> selectAllBySortCondition(int condition) {
 
         StringBuffer sb = new StringBuffer();
         sb.append(" SELECT * FROM ");
@@ -188,7 +190,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         Cursor cursor = db.rawQuery(sb.toString(), null);
 
-        ArrayList<Restaurant> restaurantList = new ArrayList<>();
+        List<Restaurant> restaurantList = new ArrayList<>();
         Restaurant restaurant;
 
         while (cursor.moveToNext()) {

@@ -13,7 +13,7 @@ import com.boostcamp.miniproject2.R;
 import com.boostcamp.miniproject2.database.DatabaseHelper;
 import com.boostcamp.miniproject2.model.Restaurant;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by moon on 2017. 7. 13..
@@ -21,23 +21,23 @@ import java.util.ArrayList;
 
 public class RestaurantRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private ArrayList<Restaurant> restaurantList;
+    private List<Restaurant> restaurantList;
     private Context context;
 
-    public RestaurantRecyclerViewAdapter(ArrayList<Restaurant> restaurantList, Context context) {
+    public RestaurantRecyclerViewAdapter(List<Restaurant> restaurantList, Context context) {
         this.restaurantList = restaurantList;
         this.context = context;
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.i_restaurant, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_restaurant, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        ((ViewHolder) holder).bindView();
+        ((ViewHolder) holder).bindViewByItem(restaurantList.get(position));
     }
 
     private class ViewHolder extends RecyclerView.ViewHolder {
@@ -56,9 +56,7 @@ public class RestaurantRecyclerViewAdapter extends RecyclerView.Adapter<Recycler
             check = itemView.findViewById(R.id.checkbox_restaurant_check);
         }
 
-        private void bindView() {
-            Restaurant restaurant = restaurantList.get(getAdapterPosition());
-
+        private void bindViewByItem(Restaurant restaurant) {
             thumb.setImageResource(restaurant.getImage());
             name.setText(restaurant.getName());
             info.setText(restaurant.getInfo());
@@ -68,11 +66,10 @@ public class RestaurantRecyclerViewAdapter extends RecyclerView.Adapter<Recycler
                 public void onClick(View view) {
                     DatabaseHelper db = DatabaseHelper.getInstance(context);
                     Restaurant res = restaurantList.get(getAdapterPosition());
-                    int id = db.selectIdByName(res.getName());
                     res.setChecked(((CheckBox) view).isChecked());
-                    db.updateCheckValueById(id, ((CheckBox) view).isChecked());
 
-                    notifyDataSetChanged();
+                    int id = db.selectIdByName(res.getName());
+                    db.updateCheckValueById(id, ((CheckBox) view).isChecked());
                 }
             });
         }
@@ -80,6 +77,6 @@ public class RestaurantRecyclerViewAdapter extends RecyclerView.Adapter<Recycler
 
     @Override
     public int getItemCount() {
-        return restaurantList.size();
+        return restaurantList != null? restaurantList.size() : 0;
     }
 }

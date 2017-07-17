@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.a_main);
+        setContentView(R.layout.activity_main);
 
         initToolbar();
         initDrawerLayout();
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity
         fragment = SortedFragment.newInstance();
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.frame_layout_fragment_container, fragment)
+                .replace(R.id.framelayout_fragment_container, fragment)
                 .commit();
     }
 

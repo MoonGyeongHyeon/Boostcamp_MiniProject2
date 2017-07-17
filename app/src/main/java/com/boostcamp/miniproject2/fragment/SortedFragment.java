@@ -16,12 +16,14 @@ import com.boostcamp.miniproject2.database.DatabaseHelper;
 import com.boostcamp.miniproject2.model.Restaurant;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by moon on 2017. 7. 13..
  */
 
 public class SortedFragment extends Fragment {
+
     public static final int METHOD_LINEAR = 1;
     public static final int METHOD_STAGGERED = 2;
 
@@ -29,7 +31,7 @@ public class SortedFragment extends Fragment {
     private RestaurantRecyclerViewAdapter adapter;
     private RecyclerView.LayoutManager manager;
     private DatabaseHelper db;
-    private ArrayList<Restaurant> restaurantList = new ArrayList<>();
+    private List<Restaurant> restaurantList = new ArrayList<>();
     private int currentMethod = METHOD_STAGGERED;
     private int condition = DatabaseHelper.ORDER_BY_NEARBY;
 
@@ -56,9 +58,9 @@ public class SortedFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View layout = inflater.inflate(R.layout.f_sorted, container, false);
+        View layout = inflater.inflate(R.layout.fragment_sorted, container, false);
 
-        recyclerView = layout.findViewById(R.id.recycler_view_nearby);
+        recyclerView = layout.findViewById(R.id.recyclerview_nearby);
 
         return layout;
     }

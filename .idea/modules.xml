@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BoostCamp_2nd_MiniProject_W2.iml" filepath="$PROJECT_DIR$/BoostCamp_2nd_MiniProject_W2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Boostcamp_MiniProject2.iml" filepath="$PROJECT_DIR$/Boostcamp_MiniProject2.iml" />
       <module fileurl="file://$PROJECT_DIR$/MiniProject2.iml" filepath="$PROJECT_DIR$/MiniProject2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
